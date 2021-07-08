@@ -1,0 +1,41 @@
+General
+• What is kafka? How it works? Which are the main advantages/benefits of using
+kafka?
+kafka is  a publish-subscribe based messaging system exchanging data between processes, applications, and servers.
+In this software topics or categories can be defined,
+applications can add, process and reprocess records.
+Applications connect to this system and transfer a record onto the topic. A record can include any kind of information.
+Kafka offers much higher performance than other MQ systems. It uses sequential disk I/O to boost performance, making it a suitable option for implementing queues.
+It can achieve high throughput with limited resources, a necessity for big data use cases
+
+• Write down testing strategy for an application that uses kafka, describe how the
+testing will be organized and provide 1 test case as an example.
+
+End-to-end testing should be applied  to ensure that the data integrity is maintained between applications and  data pipelines behave as expected.
+Testing requires all integrated components of application to be up and running — in order to be able to test them with different scenarios
+End-to-end testing approach  will validate both producing, consuming, and DLQ records as well as the application processing logic
+
+e.g
+1. Create a topic
+2. Poduce test data to a topic
+3. Consume data from a topic
+4. Validate response after data are consumed 
+
+
+• What is microservice architecture? Please write down your approach for testing
+microservices and what will be the scope of your testing.
+
+
+Microservices architecture is  an approach to designing software systems that are made up of small independent services that each have a specific purpose.
+The following should be applied in microservices testing:
+A unit test that focuses on the smallest part of a testable software to ascertain whether that component works as it should 
+Component Tests - once  unit testing is done of all functions within a microservice, then we need to test the microservice itself in isolation.
+An integration testing, that tests the interactions between the microservice and external services, like another microservice or datastore
+Contract tests verify interactions at the boundary of an external service asserting that it meets the contract expected by a consuming service.
+End-to-end testing which tests each part of the microservice, ensuring that it can achieve its goals
+Performance testing of microservices
+
+
+• What will be your approach to ensure that tests can be re-run in future?
+Test should be important, specific and reliable to be rerun
+
